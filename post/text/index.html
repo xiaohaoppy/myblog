@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>about - 风海啸博客</title>
+  <title>text - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="关于">
+  <meta name="description" content="shishihsihsiho ilksad fsalakdalsdklk daasdasdasd 实打实的 dadasd 啊实打实的 德索萨">
   <meta name="author" content="风海啸">
-  <meta itemprop="name" content="about - 风海啸博客">
-  <meta itemprop="description" content="关于">
+  <meta itemprop="name" content="text - 风海啸博客">
+  <meta itemprop="description" content="shishihsihsiho ilksad fsalakdalsdklk daasdasdasd 实打实的 dadasd 啊实打实的 德索萨">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://xiaohaoppy.daoapp.io/about/" title="about" itemprop="url">about</a>
+      <a href="http://xiaohaoppy.daoapp.io/post/text/" title="text" itemprop="url">text</a>
   </h1>
   <p class="article-author">By
     
@@ -69,7 +69,7 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2016-04-13 13:25:20 &#43;0800 CST" itemprop="datePublished">2016年04月13日</time>
+    <time datetime="2016-04-13 14:53:59 &#43;0800 CST" itemprop="datePublished">2016年04月13日</time>
   </p>
 </header>
 
@@ -77,7 +77,20 @@
     
     
 
-<h1 id="关于:6083a88ee3411b0d17ce02d738f69d47">关于</h1>
+<p><em>shishihsihsiho ilksad</em></p>
+
+<p><strong>fsalakdalsdklk</strong></p>
+
+<pre><code>daasdasdasd 
+</code></pre>
+
+<h1 id="实打实的:7bebe296313ed4fdac2a1cf1ffe24ac1">实打实的</h1>
+
+<h2 id="dadasd:7bebe296313ed4fdac2a1cf1ffe24ac1">dadasd</h2>
+
+<h3 id="啊实打实的:7bebe296313ed4fdac2a1cf1ffe24ac1">啊实打实的</h3>
+
+<h4 id="德索萨:7bebe296313ed4fdac2a1cf1ffe24ac1">德索萨</h4>
 
 	</div>
   <footer class="article-footer clearfix">
@@ -86,7 +99,7 @@
 
 
   <div class="article-share" id="share">
-    <div data-url="http://xiaohaoppy.daoapp.io/about/" data-title="about" data-tsina="" class="share clearfix">
+    <div data-url="http://xiaohaoppy.daoapp.io/post/text/" data-title="text" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -245,6 +258,38 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -271,6 +316,27 @@ $(document).ready(function(){
 });
 </script>
 
+
+<link rel="stylesheet" href="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
 
 
 

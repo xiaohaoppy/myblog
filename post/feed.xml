@@ -2,19 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 风海啸博客</title>
-    <link>http://xiaohaoppy.github.io/post/</link>
+    <link>http://xiaohaoppy.daoapp.io/post/</link>
     <description>Recent content in Posts on 风海啸博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Apr 2016 13:25:33 +0800</lastBuildDate>
-    <atom:link href="http://xiaohaoppy.github.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Apr 2016 14:53:59 +0800</lastBuildDate>
+    <atom:link href="http://xiaohaoppy.daoapp.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>text</title>
+      <link>http://xiaohaoppy.daoapp.io/post/text/</link>
+      <pubDate>Wed, 13 Apr 2016 14:53:59 +0800</pubDate>
+      
+      <guid>http://xiaohaoppy.daoapp.io/post/text/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;shishihsihsiho ilksad&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;fsalakdalsdklk&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;daasdasdasd 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;实打实的:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;实打实的&lt;/h1&gt;
+
+&lt;h2 id=&#34;dadasd:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;dadasd&lt;/h2&gt;
+
+&lt;h3 id=&#34;啊实打实的:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;啊实打实的&lt;/h3&gt;
+
+&lt;h4 id=&#34;德索萨:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;德索萨&lt;/h4&gt;
+</description>
+    </item>
     
     <item>
       <title>first</title>
-      <link>http://xiaohaoppy.github.io/post/first/</link>
+      <link>http://xiaohaoppy.daoapp.io/post/first/</link>
       <pubDate>Wed, 13 Apr 2016 13:25:33 +0800</pubDate>
       
-      <guid>http://xiaohaoppy.github.io/post/first/</guid>
+      <guid>http://xiaohaoppy.daoapp.io/post/first/</guid>
       <description>
 
 &lt;h1 id=&#34;第一篇博客:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;第一篇博客&lt;/h1&gt;
