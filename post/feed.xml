@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 风海啸博客</title>
+    <link>http://xiaohaoppy.github.io/post/</link>
+    <description>Recent content in Posts on 风海啸博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Apr 2016 13:25:33 +0800</lastBuildDate>
+    <atom:link href="http://xiaohaoppy.github.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>first</title>
+      <link>http://xiaohaoppy.github.io/post/first/</link>
+      <pubDate>Wed, 13 Apr 2016 13:25:33 +0800</pubDate>
+      
+      <guid>http://xiaohaoppy.github.io/post/first/</guid>
+      <description>
+
+&lt;h1 id=&#34;第一篇博客:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;第一篇博客&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;对你大声的呼喊“哈喽，世界”&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
