@@ -6,45 +6,69 @@
     <description>Recent content on 风海啸博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Apr 2016 14:53:59 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Apr 2016 11:07:45 +0800</lastBuildDate>
     <atom:link href="http://xiaohaoppy.daoapp.io/feed/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>text</title>
-      <link>http://xiaohaoppy.daoapp.io/post/text/</link>
-      <pubDate>Wed, 13 Apr 2016 14:53:59 +0800</pubDate>
+      <title>搭建博客</title>
+      <link>http://xiaohaoppy.daoapp.io/post/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 14 Apr 2016 11:07:45 +0800</pubDate>
       
-      <guid>http://xiaohaoppy.daoapp.io/post/text/</guid>
+      <guid>http://xiaohaoppy.daoapp.io/post/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
       <description>
 
-&lt;p&gt;&lt;em&gt;shishihsihsiho ilksad&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;博客是hugo生成。&lt;br /&gt;
+Hugo是一个用Go语言编写的静态网站生成器，它使用起来非常简单，相对于Jekyll复杂的安装设置来说，Hugo仅需要一个二进制文件hugo(hugo.exe)即可轻松用于本地调试和生成静态页面。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;fsalakdalsdklk&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hugo生成静态页面的效率很高，我的260多篇博客文章生成几乎是瞬间完成的，而之前用Jekyll需要等待10秒左右。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;daasdasdasd 
+&lt;h2 id=&#34;hugo官方网站:355ce35de1283acdf5dc7c877fad7c29&#34;&gt;hugo官方网站&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gohugo.io/&#34;&gt;https://gohugo.io/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;本博客项目地址:355ce35de1283acdf5dc7c877fad7c29&#34;&gt;本博客项目地址&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/xiaohaoppy/xiaohaoppy-hugo-blog&#34;&gt;https://github.com/xiaohaoppy/xiaohaoppy-hugo-blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;博客使用模板地址:355ce35de1283acdf5dc7c877fad7c29&#34;&gt;博客使用模板地址&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/coderzh/hugo-pacman-theme&#34;&gt;https://github.com/coderzh/hugo-pacman-theme&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;生成静态网站地址:355ce35de1283acdf5dc7c877fad7c29&#34;&gt;生成静态网站地址&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/xiaohaoppy/myblog&#34;&gt;https://github.com/xiaohaoppy/myblog&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;部署镜像地址:355ce35de1283acdf5dc7c877fad7c29&#34;&gt;部署镜像地址&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/xiaohaoppy/daocloud-blog&#34;&gt;https://github.com/xiaohaoppy/daocloud-blog&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;镜像使用caddy部署，是个静态网站服务器。&lt;/p&gt;
+
+&lt;p&gt;服务启动自动git clone你的静态网站并且每隔一段时间自动git pull&lt;/p&gt;
+
+&lt;p&gt;配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;0.0.0.0:2015 {
+    root /public
+    git https://github.com/xiaohaoppy/myblog.git / {
+        interval 60
+    }
+}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1 id=&#34;实打实的:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;实打实的&lt;/h1&gt;
+&lt;h2 id=&#34;部署在:355ce35de1283acdf5dc7c877fad7c29&#34;&gt;部署在&lt;/h2&gt;
 
-&lt;h2 id=&#34;dadasd:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;dadasd&lt;/h2&gt;
-
-&lt;h3 id=&#34;啊实打实的:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;啊实打实的&lt;/h3&gt;
-
-&lt;h4 id=&#34;德索萨:7bebe296313ed4fdac2a1cf1ffe24ac1&#34;&gt;德索萨&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.daocloud.io/&#34;&gt;https://www.daocloud.io/&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>first</title>
-      <link>http://xiaohaoppy.daoapp.io/post/first/</link>
-      <pubDate>Wed, 13 Apr 2016 13:25:33 +0800</pubDate>
+      <title>第一篇博客</title>
+      <link>http://xiaohaoppy.daoapp.io/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Thu, 14 Apr 2016 11:05:39 +0800</pubDate>
       
-      <guid>http://xiaohaoppy.daoapp.io/post/first/</guid>
-      <description>
-
-&lt;h1 id=&#34;第一篇博客:e8fb9c67eba912c72729806db31eaa1b&#34;&gt;第一篇博客&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;对你大声的呼喊“哈喽，世界”&lt;/strong&gt;&lt;/p&gt;
+      <guid>http://xiaohaoppy.daoapp.io/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;对你大声的呼喊“哈喽，世界”&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
