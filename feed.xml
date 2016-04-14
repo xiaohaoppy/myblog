@@ -6,8 +6,99 @@
     <description>Recent content on 风海啸博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 14 Apr 2016 11:07:45 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Apr 2016 11:37:04 +0800</lastBuildDate>
     <atom:link href="http://xiaohaoppy.daoapp.io/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>kbe运行镜像</title>
+      <link>http://xiaohaoppy.daoapp.io/post/kbe%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Thu, 14 Apr 2016 11:37:04 +0800</pubDate>
+      
+      <guid>http://xiaohaoppy.daoapp.io/post/kbe%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/</guid>
+      <description>
+
+&lt;h1 id=&#34;镜像地址:091568a9ec46ad4d8d09b6399a30aff5&#34;&gt;镜像地址&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/xiaohaoppy/kbe_server&#34;&gt;https://github.com/xiaohaoppy/kbe_server&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;用途:091568a9ec46ad4d8d09b6399a30aff5&#34;&gt;用途&lt;/h1&gt;
+
+&lt;p&gt;一台服务器部署多组kbe服务&lt;/p&gt;
+
+&lt;p&gt;可以使用该镜像分布式部署kbe&lt;/p&gt;
+
+&lt;p&gt;# 用法&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; git clone https://github.com/xiaohaoppy/kbe_server.git
+ cd kbe_server
+ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用编译镜像编译kbehttps://github.com/xiaohaoppy/KBE_BUILD_EVN&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; docker run xiaohaoppy/KBE_BUILD_EVN
+ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;等待编译完成 拷贝出编译的文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; docker cp &amp;lt;编译镜像容器的ID&amp;gt;：/kbengine/kbe/bin /kbengine/kbe/bin
+ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt; assets\scripts/下放入自己的额脚本逻辑
+ 
+ assets\res\server/kbengine.xml 修改配置文件 该容器里没有数据库需要自己配置数据库，并且配置对外ip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;## build镜像&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; docker build xiaohaoppy/kbe-server .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;## 启动镜像&lt;/p&gt;
+
+&lt;p&gt;-u 为设置容器的UID -p 映射端口  -i -t 启动个伪终端&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; docker run -t -i -p 20013:20013 -P 20015:20015 -P 20016:20016 -p 20017:20017 -u 1000 xiaohaoppy/kbe-server /bin/bash
+ 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在容器里执行&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; cd /kbengine/assets
+ 
+ sh start_server.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;启动kbe完成&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>kbe编译镜像</title>
+      <link>http://xiaohaoppy.daoapp.io/post/kbe%E7%BC%96%E8%AF%91%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Thu, 14 Apr 2016 11:36:45 +0800</pubDate>
+      
+      <guid>http://xiaohaoppy.daoapp.io/post/kbe%E7%BC%96%E8%AF%91%E9%95%9C%E5%83%8F/</guid>
+      <description>
+
+&lt;h1 id=&#34;镜像地址:d19eaa930cac8fed3ce150af40ccd836&#34;&gt;镜像地址&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/xiaohaoppy/KBE_BUILD_EVN&#34;&gt;https://github.com/xiaohaoppy/KBE_BUILD_EVN&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;如何使用:d19eaa930cac8fed3ce150af40ccd836&#34;&gt;如何使用&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;gir clone https://github.com/xiaohaoppy/KBE_BUILD_EVN.git
+
+cd KBE_BUILD_EVN
+
+docker build -t xiaohaoppy/kbe-build-env .
+
+docker run -v /home/kbengine/kbe/bin:/kbengine/kbe/bin xiaohaoppy/kbe-build-env
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>搭建博客</title>
@@ -73,15 +164,12 @@ Hugo是一个用Go语言编写的静态网站生成器，它使用起来非常�
     </item>
     
     <item>
-      <title>about</title>
+      <title>关于</title>
       <link>http://xiaohaoppy.daoapp.io/about/</link>
       <pubDate>Wed, 13 Apr 2016 13:25:20 +0800</pubDate>
       
       <guid>http://xiaohaoppy.daoapp.io/about/</guid>
-      <description>
-
-&lt;h1 id=&#34;关于:6083a88ee3411b0d17ce02d738f69d47&#34;&gt;关于&lt;/h1&gt;
-</description>
+      <description></description>
     </item>
     
   </channel>

@@ -2,18 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>第一篇博客 - 风海啸博客</title>
+  <title>Kbe - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="对你大声的呼喊“哈喽，世界”">
+  <meta name="description" content="Kbe">
   <meta name="author" content="风海啸">
-  <meta itemprop="name" content="第一篇博客 - 风海啸博客">
-  <meta itemprop="description" content="对你大声的呼喊“哈喽，世界”">
+  <meta itemprop="name" content="Kbe - 风海啸博客">
+  <meta itemprop="description" content="Kbe">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
   <meta name="twitter:description" content="">
-  
+  <link rel="alternate" href="http://xiaohaoppy.daoapp.io/feed.xml" title="风海啸博客" type="application/rss+xml"/>
   <link rel="shortcut icon" href="http://xiaohaoppy.daoapp.io/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="http://xiaohaoppy.daoapp.io/apple-touch-icon.png" />
   <link rel="apple-touch-icon-precomposed" href="http://xiaohaoppy.daoapp.io/apple-touch-icon.png" />
@@ -57,45 +57,30 @@
 
   </header>
   <div id="container">
-    <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody">
-    <header class="article-info clearfix">
-  <h1 itemprop="name">
-      <a href="http://xiaohaoppy.daoapp.io/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="第一篇博客" itemprop="url">第一篇博客</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://xiaohaoppy.daoapp.io/" title="风海啸">风海啸</a>
-    
-  </p>
-  <p class="article-time">
-    <time datetime="2016-04-14 11:05:39 &#43;0800 CST" itemprop="datePublished">2016年04月14日</time>
-  </p>
-</header>
+    <div id="main">
+      
+      <h2 id="2016-04">2016-04</h2>
+      
+      <section class="post" itemscope itemprop="blogPost">
+    <a href="http://xiaohaoppy.daoapp.io/post/kbe%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/" title="kbe运行镜像" itemprop="url">
+    <h1 itemprop="name">kbe运行镜像</h1>
+    <p itemprop="description">镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe # 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.</p>
+    <time datetime="2016-04-14 11:37:04 &#43;0800 CST" itemprop="datePublished">2016年04月14日</time>
+  </a>
+</section>
 
-	<div class="article-content">
-    
-    <p><strong>对你大声的呼喊“哈喽，世界”</strong></p>
+      
+      <section class="post" itemscope itemprop="blogPost">
+    <a href="http://xiaohaoppy.daoapp.io/post/kbe%E7%BC%96%E8%AF%91%E9%95%9C%E5%83%8F/" title="kbe编译镜像" itemprop="url">
+    <h1 itemprop="name">kbe编译镜像</h1>
+    <p itemprop="description">镜像地址 https://github.com/xiaohaoppy/KBE_BUILD_EVN 如何使用 gir clone https://github.com/xiaohaoppy/KBE_BUILD_EVN.git cd KBE_BUILD_EVN docker build -t xiaohaoppy/kbe-build-env . docker run -v /home/kbengine/kbe/bin:/kbengine/kbe/bin xiaohaoppy/kbe-build-env</p>
+    <time datetime="2016-04-14 11:36:45 &#43;0800 CST" itemprop="datePublished">2016年04月14日</time>
+  </a>
+</section>
 
-	</div>
-  <footer class="article-footer clearfix">
-  
-
-
-
-  <div class="article-share" id="share">
-    <div data-url="http://xiaohaoppy.daoapp.io/post/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-title="第一篇博客" data-tsina="" class="share clearfix">
+      
+      
     </div>
-  </div>
-</footer>
-
-	</article>
-  
-
-
-
-</div>
-
     <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -161,6 +146,10 @@
 
 
   
+<div class="rsspart">
+  <a rel="nofollow" href="http://xiaohaoppy.daoapp.io/feed.xml" type="application/rss+xml" target="_blank">RSS 订阅</a>
+</div>
+
 
 </aside>
 </div>
@@ -249,38 +238,6 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -307,27 +264,6 @@ $(document).ready(function(){
 });
 </script>
 
-
-<link rel="stylesheet" href="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-});
-</script>
 
 
 
