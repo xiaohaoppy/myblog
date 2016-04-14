@@ -6,8 +6,76 @@
     <description>Recent content in Posts on 风海啸博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 14 Apr 2016 11:37:04 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Apr 2016 14:12:03 +0800</lastBuildDate>
     <atom:link href="http://xiaohaoppy.daoapp.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>使用反向链接搭建公网可访问的kbe服务</title>
+      <link>http://xiaohaoppy.daoapp.io/post/%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5%E6%90%AD%E5%BB%BA%E5%85%AC%E7%BD%91%E5%8F%AF%E8%AE%BF%E9%97%AE%E7%9A%84kbe%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Thu, 14 Apr 2016 14:12:03 +0800</pubDate>
+      
+      <guid>http://xiaohaoppy.daoapp.io/post/%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5%E6%90%AD%E5%BB%BA%E5%85%AC%E7%BD%91%E5%8F%AF%E8%AE%BF%E9%97%AE%E7%9A%84kbe%E6%9C%8D%E5%8A%A1/</guid>
+      <description>
+
+&lt;h1 id=&#34;ngrok-内网穿透利器:bbb754c3114ecee08038d32c7415911d&#34;&gt;Ngrok 内网穿透利器&lt;/h1&gt;
+
+&lt;p&gt;ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放&lt;/p&gt;
+
+&lt;p&gt;使用国内免费Ngrok &lt;a href=&#34;http://qydevv.com&#34;&gt;http://qydevv.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;正式使用自行搭建ngrok服务器&lt;/p&gt;
+
+&lt;p&gt;ngrok开源地址 &lt;a href=&#34;https://github.com/tutumcloud/ngrok&#34;&gt;https://github.com/tutumcloud/ngrok&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;开始部署:bbb754c3114ecee08038d32c7415911d&#34;&gt;开始部署&lt;/h1&gt;
+
+&lt;p&gt;修改kbengine配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	&amp;lt;loginapp&amp;gt;
+        &amp;lt;externalAddress&amp;gt; tunnel.qydev.com &amp;lt;/externalAddress&amp;gt;
+        &amp;lt;externalPorts_min&amp;gt; 30013 &amp;lt;/externalPorts_min&amp;gt;		
+                        			
+		&amp;lt;externalPorts_max&amp;gt; 0 &amp;lt;/externalPorts_max&amp;gt;
+	&amp;lt;/loginapp&amp;gt;	
+    
+    
+    &amp;lt;baseapp&amp;gt;
+		&amp;lt;backupPeriod&amp;gt; 500 &amp;lt;/backupPeriod&amp;gt;
+        &amp;lt;externalAddress&amp;gt; tunnel.qydev.com &amp;lt;/externalAddress&amp;gt;
+        &amp;lt;externalPorts_min&amp;gt; 30015 &amp;lt;/externalPorts_min&amp;gt;					 
+		&amp;lt;externalPorts_max&amp;gt; 0 &amp;lt;/externalPorts_max&amp;gt;
+	&amp;lt;/baseapp&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ngrok配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server_addr: &amp;quot;tunnel.qydev.com:4443&amp;quot;
+trust_host_root_certs: false
+tunnels: 
+  loginapp:
+   remote_port: 30013 
+   proto:
+    tcp: 30013 
+  baseapp: 
+    remote_port: 30015
+    proto:
+      tcp: 30015
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;启动kbe:bbb754c3114ecee08038d32c7415911d&#34;&gt;启动kbe&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;sh start_server.bat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;启动ngrok:bbb754c3114ecee08038d32c7415911d&#34;&gt;启动ngrok&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;ngrok -config ngrok.cfg start baseapp loginapp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样外网就可以访问内网kbe服务了。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>kbe运行镜像</title>

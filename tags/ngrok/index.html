@@ -2,18 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>kbe运行镜像 - 风海啸博客</title>
+  <title>Ngrok - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.c">
+  <meta name="description" content="Ngrok">
   <meta name="author" content="风海啸">
-  <meta itemprop="name" content="kbe运行镜像 - 风海啸博客">
-  <meta itemprop="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.c">
+  <meta itemprop="name" content="Ngrok - 风海啸博客">
+  <meta itemprop="description" content="Ngrok">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
   <meta name="twitter:description" content="">
-  
+  <link rel="alternate" href="http://xiaohaoppy.daoapp.io/feed.xml" title="风海啸博客" type="application/rss+xml"/>
   <link rel="shortcut icon" href="http://xiaohaoppy.daoapp.io/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="http://xiaohaoppy.daoapp.io/apple-touch-icon.png" />
   <link rel="apple-touch-icon-precomposed" href="http://xiaohaoppy.daoapp.io/apple-touch-icon.png" />
@@ -57,134 +57,21 @@
 
   </header>
   <div id="container">
-    <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody">
-    <header class="article-info clearfix">
-  <h1 itemprop="name">
-      <a href="http://xiaohaoppy.daoapp.io/post/kbe%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/" title="kbe运行镜像" itemprop="url">kbe运行镜像</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://xiaohaoppy.daoapp.io/" title="风海啸">风海啸</a>
-    
-  </p>
-  <p class="article-time">
-    <time datetime="2016-04-14 11:37:04 &#43;0800 CST" itemprop="datePublished">2016年04月14日</time>
-  </p>
-</header>
+    <div id="main">
+      
+      <h2 id="2016-04">2016-04</h2>
+      
+      <section class="post" itemscope itemprop="blogPost">
+    <a href="http://xiaohaoppy.daoapp.io/post/%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5%E6%90%AD%E5%BB%BA%E5%85%AC%E7%BD%91%E5%8F%AF%E8%AE%BF%E9%97%AE%E7%9A%84kbe%E6%9C%8D%E5%8A%A1/" title="使用反向链接搭建公网可访问的kbe服务" itemprop="url">
+    <h1 itemprop="name">使用反向链接搭建公网可访问的kbe服务</h1>
+    <p itemprop="description">Ngrok 内网穿透利器 ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期</p>
+    <time datetime="2016-04-14 14:12:03 &#43;0800 CST" itemprop="datePublished">2016年04月14日</time>
+  </a>
+</section>
 
-	<div class="article-content">
-    
-		<div class="toc-article">
-			<strong class="toc-title">文章目录</strong>
-      <nav id="TableOfContents">
-<ul>
-<li><a href="#镜像地址:091568a9ec46ad4d8d09b6399a30aff5">镜像地址</a></li>
-<li><a href="#用途:091568a9ec46ad4d8d09b6399a30aff5">用途</a></li>
-<li><a href="#用法:091568a9ec46ad4d8d09b6399a30aff5">用法</a>
-<ul>
-<li><a href="#build镜像:091568a9ec46ad4d8d09b6399a30aff5">build镜像</a></li>
-<li><a href="#启动镜像:091568a9ec46ad4d8d09b6399a30aff5">启动镜像</a></li>
-</ul></li>
-</ul>
-</nav>
-		</div>
-    
-    
-
-<h1 id="镜像地址:091568a9ec46ad4d8d09b6399a30aff5">镜像地址</h1>
-
-<p><a href="https://github.com/xiaohaoppy/kbe_server">https://github.com/xiaohaoppy/kbe_server</a></p>
-
-<h1 id="用途:091568a9ec46ad4d8d09b6399a30aff5">用途</h1>
-
-<p>一台服务器部署多组kbe服务</p>
-
-<p>可以使用该镜像分布式部署kbe</p>
-
-<h1 id="用法:091568a9ec46ad4d8d09b6399a30aff5">用法</h1>
-
-<pre><code> git clone https://github.com/xiaohaoppy/kbe_server.git
- cd kbe_server
- 
-</code></pre>
-
-<p>使用编译镜像编译kbehttps://github.com/xiaohaoppy/KBE_BUILD_EVN</p>
-
-<pre><code> docker run xiaohaoppy/KBE_BUILD_EVN
- 
-</code></pre>
-
-<p>等待编译完成 拷贝出编译的文件</p>
-
-<pre><code> docker cp &lt;编译镜像容器的ID&gt;：/kbengine/kbe/bin /kbengine/kbe/bin
- 
-</code></pre>
-
-<pre><code> assets\scripts/下放入自己的额脚本逻辑
- 
- assets\res\server/kbengine.xml 修改配置文件 该容器里没有数据库需要自己配置数据库，并且配置对外ip
-</code></pre>
-
-<h2 id="build镜像:091568a9ec46ad4d8d09b6399a30aff5">build镜像</h2>
-
-<pre><code> docker build xiaohaoppy/kbe-server .
-</code></pre>
-
-<h2 id="启动镜像:091568a9ec46ad4d8d09b6399a30aff5">启动镜像</h2>
-
-<p>-u 为设置容器的UID -p 映射端口  -i -t 启动个伪终端</p>
-
-<pre><code> docker run -t -i -p 20013:20013 -P 20015:20015 -P 20016:20016 -p 20017:20017 -u 1000 xiaohaoppy/kbe-server /bin/bash
- 
-</code></pre>
-
-<p>在容器里执行</p>
-
-<pre><code> cd /kbengine/assets
- 
- sh start_server.sh
-</code></pre>
-
-<p>启动kbe完成</p>
-
-	</div>
-  <footer class="article-footer clearfix">
-  
-
-<div class="article-tags">
-  <span></span>
-  
-  <a href="http://xiaohaoppy.daoapp.io/tags/kbe">kbe</a>
-  
-</div>
-
-
-
-
-
-<div class="article-categories">
-  <span></span>
-  
-  <a class="article-category-link" href="http://xiaohaoppy.daoapp.io/categories/kbengine">kbengine</a>
-  
-</div>
-
-
-
-  <div class="article-share" id="share">
-    <div data-url="http://xiaohaoppy.daoapp.io/post/kbe%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/" data-title="kbe运行镜像" data-tsina="" class="share clearfix">
+      
+      
     </div>
-  </div>
-</footer>
-
-	</article>
-  
-
-
-
-</div>
-
     <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -254,6 +141,10 @@
 
 
   
+<div class="rsspart">
+  <a rel="nofollow" href="http://xiaohaoppy.daoapp.io/feed.xml" type="application/rss+xml" target="_blank">RSS 订阅</a>
+</div>
+
 
 </aside>
 </div>
@@ -342,38 +233,6 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-    c.click(function(){
-      ta.css('display', 'block').addClass('fadeIn');
-    });
-    o.click(function(){
-      ta.css('display', 'none');
-    });
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,320-$(this).scrollTop()));
-    });
-  };
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -400,27 +259,6 @@ $(document).ready(function(){
 });
 </script>
 
-
-<link rel="stylesheet" href="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-});
-</script>
 
 
 

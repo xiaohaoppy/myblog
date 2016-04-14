@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>kbe运行镜像 - 风海啸博客</title>
+  <title>使用反向链接搭建公网可访问的kbe服务 - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.c">
+  <meta name="description" content="Ngrok 内网穿透利器 ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期">
   <meta name="author" content="风海啸">
-  <meta itemprop="name" content="kbe运行镜像 - 风海啸博客">
-  <meta itemprop="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.c">
+  <meta itemprop="name" content="使用反向链接搭建公网可访问的kbe服务 - 风海啸博客">
+  <meta itemprop="description" content="Ngrok 内网穿透利器 ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://xiaohaoppy.daoapp.io/post/kbe%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/" title="kbe运行镜像" itemprop="url">kbe运行镜像</a>
+      <a href="http://xiaohaoppy.daoapp.io/post/%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5%E6%90%AD%E5%BB%BA%E5%85%AC%E7%BD%91%E5%8F%AF%E8%AE%BF%E9%97%AE%E7%9A%84kbe%E6%9C%8D%E5%8A%A1/" title="使用反向链接搭建公网可访问的kbe服务" itemprop="url">使用反向链接搭建公网可访问的kbe服务</a>
   </h1>
   <p class="article-author">By
     
@@ -69,7 +69,7 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2016-04-14 11:37:04 &#43;0800 CST" itemprop="datePublished">2016年04月14日</time>
+    <time datetime="2016-04-14 14:12:03 &#43;0800 CST" itemprop="datePublished">2016年04月14日</time>
   </p>
 </header>
 
@@ -79,74 +79,73 @@
 			<strong class="toc-title">文章目录</strong>
       <nav id="TableOfContents">
 <ul>
-<li><a href="#镜像地址:091568a9ec46ad4d8d09b6399a30aff5">镜像地址</a></li>
-<li><a href="#用途:091568a9ec46ad4d8d09b6399a30aff5">用途</a></li>
-<li><a href="#用法:091568a9ec46ad4d8d09b6399a30aff5">用法</a>
-<ul>
-<li><a href="#build镜像:091568a9ec46ad4d8d09b6399a30aff5">build镜像</a></li>
-<li><a href="#启动镜像:091568a9ec46ad4d8d09b6399a30aff5">启动镜像</a></li>
-</ul></li>
+<li><a href="#ngrok-内网穿透利器:bbb754c3114ecee08038d32c7415911d">Ngrok 内网穿透利器</a></li>
+<li><a href="#开始部署:bbb754c3114ecee08038d32c7415911d">开始部署</a></li>
+<li><a href="#启动kbe:bbb754c3114ecee08038d32c7415911d">启动kbe</a></li>
+<li><a href="#启动ngrok:bbb754c3114ecee08038d32c7415911d">启动ngrok</a></li>
 </ul>
 </nav>
 		</div>
     
     
 
-<h1 id="镜像地址:091568a9ec46ad4d8d09b6399a30aff5">镜像地址</h1>
+<h1 id="ngrok-内网穿透利器:bbb754c3114ecee08038d32c7415911d">Ngrok 内网穿透利器</h1>
 
-<p><a href="https://github.com/xiaohaoppy/kbe_server">https://github.com/xiaohaoppy/kbe_server</a></p>
+<p>ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放</p>
 
-<h1 id="用途:091568a9ec46ad4d8d09b6399a30aff5">用途</h1>
+<p>使用国内免费Ngrok <a href="http://qydevv.com">http://qydevv.com</a></p>
 
-<p>一台服务器部署多组kbe服务</p>
+<p>正式使用自行搭建ngrok服务器</p>
 
-<p>可以使用该镜像分布式部署kbe</p>
+<p>ngrok开源地址 <a href="https://github.com/tutumcloud/ngrok">https://github.com/tutumcloud/ngrok</a></p>
 
-<h1 id="用法:091568a9ec46ad4d8d09b6399a30aff5">用法</h1>
+<h1 id="开始部署:bbb754c3114ecee08038d32c7415911d">开始部署</h1>
 
-<pre><code> git clone https://github.com/xiaohaoppy/kbe_server.git
- cd kbe_server
- 
+<p>修改kbengine配置文件</p>
+
+<pre><code>	&lt;loginapp&gt;
+        &lt;externalAddress&gt; tunnel.qydev.com &lt;/externalAddress&gt;
+        &lt;externalPorts_min&gt; 30013 &lt;/externalPorts_min&gt;		
+                        			
+		&lt;externalPorts_max&gt; 0 &lt;/externalPorts_max&gt;
+	&lt;/loginapp&gt;	
+    
+    
+    &lt;baseapp&gt;
+		&lt;backupPeriod&gt; 500 &lt;/backupPeriod&gt;
+        &lt;externalAddress&gt; tunnel.qydev.com &lt;/externalAddress&gt;
+        &lt;externalPorts_min&gt; 30015 &lt;/externalPorts_min&gt;					 
+		&lt;externalPorts_max&gt; 0 &lt;/externalPorts_max&gt;
+	&lt;/baseapp&gt;
 </code></pre>
 
-<p>使用编译镜像编译kbehttps://github.com/xiaohaoppy/KBE_BUILD_EVN</p>
+<p>ngrok配置文件</p>
 
-<pre><code> docker run xiaohaoppy/KBE_BUILD_EVN
- 
+<pre><code>server_addr: &quot;tunnel.qydev.com:4443&quot;
+trust_host_root_certs: false
+tunnels: 
+  loginapp:
+   remote_port: 30013 
+   proto:
+    tcp: 30013 
+  baseapp: 
+    remote_port: 30015
+    proto:
+      tcp: 30015
+
 </code></pre>
 
-<p>等待编译完成 拷贝出编译的文件</p>
+<h1 id="启动kbe:bbb754c3114ecee08038d32c7415911d">启动kbe</h1>
 
-<pre><code> docker cp &lt;编译镜像容器的ID&gt;：/kbengine/kbe/bin /kbengine/kbe/bin
- 
+<pre><code>sh start_server.bat
 </code></pre>
 
-<pre><code> assets\scripts/下放入自己的额脚本逻辑
- 
- assets\res\server/kbengine.xml 修改配置文件 该容器里没有数据库需要自己配置数据库，并且配置对外ip
+<h1 id="启动ngrok:bbb754c3114ecee08038d32c7415911d">启动ngrok</h1>
+
+<pre><code>ngrok -config ngrok.cfg start baseapp loginapp
 </code></pre>
 
-<h2 id="build镜像:091568a9ec46ad4d8d09b6399a30aff5">build镜像</h2>
-
-<pre><code> docker build xiaohaoppy/kbe-server .
-</code></pre>
-
-<h2 id="启动镜像:091568a9ec46ad4d8d09b6399a30aff5">启动镜像</h2>
-
-<p>-u 为设置容器的UID -p 映射端口  -i -t 启动个伪终端</p>
-
-<pre><code> docker run -t -i -p 20013:20013 -P 20015:20015 -P 20016:20016 -p 20017:20017 -u 1000 xiaohaoppy/kbe-server /bin/bash
- 
-</code></pre>
-
-<p>在容器里执行</p>
-
-<pre><code> cd /kbengine/assets
- 
- sh start_server.sh
-</code></pre>
-
-<p>启动kbe完成</p>
+<p>这样外网就可以访问内网kbe服务了。</p>
 
 	</div>
   <footer class="article-footer clearfix">
@@ -156,6 +155,8 @@
   <span></span>
   
   <a href="http://xiaohaoppy.daoapp.io/tags/kbe">kbe</a>
+  
+  <a href="http://xiaohaoppy.daoapp.io/tags/ngrok">ngrok</a>
   
 </div>
 
@@ -173,7 +174,7 @@
 
 
   <div class="article-share" id="share">
-    <div data-url="http://xiaohaoppy.daoapp.io/post/kbe%E8%BF%90%E8%A1%8C%E9%95%9C%E5%83%8F/" data-title="kbe运行镜像" data-tsina="" class="share clearfix">
+    <div data-url="http://xiaohaoppy.daoapp.io/post/%E4%BD%BF%E7%94%A8%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5%E6%90%AD%E5%BB%BA%E5%85%AC%E7%BD%91%E5%8F%AF%E8%AE%BF%E9%97%AE%E7%9A%84kbe%E6%9C%8D%E5%8A%A1/" data-title="使用反向链接搭建公网可访问的kbe服务" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
