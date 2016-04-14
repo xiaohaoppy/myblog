@@ -27,7 +27,7 @@
 
 &lt;p&gt;可以使用该镜像分布式部署kbe&lt;/p&gt;
 
-&lt;p&gt;# 用法&lt;/p&gt;
+&lt;h1 id=&#34;用法:091568a9ec46ad4d8d09b6399a30aff5&#34;&gt;用法&lt;/h1&gt;
 
 &lt;pre&gt;&lt;code&gt; git clone https://github.com/xiaohaoppy/kbe_server.git
  cd kbe_server
@@ -51,12 +51,12 @@
  assets\res\server/kbengine.xml 修改配置文件 该容器里没有数据库需要自己配置数据库，并且配置对外ip
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;## build镜像&lt;/p&gt;
+&lt;h2 id=&#34;build镜像:091568a9ec46ad4d8d09b6399a30aff5&#34;&gt;build镜像&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt; docker build xiaohaoppy/kbe-server .
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;## 启动镜像&lt;/p&gt;
+&lt;h2 id=&#34;启动镜像:091568a9ec46ad4d8d09b6399a30aff5&#34;&gt;启动镜像&lt;/h2&gt;
 
 &lt;p&gt;-u 为设置容器的UID -p 映射端口  -i -t 启动个伪终端&lt;/p&gt;
 

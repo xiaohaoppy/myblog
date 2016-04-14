@@ -5,10 +5,10 @@
   <title>kbe运行镜像 - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe # 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.">
+  <meta name="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.c">
   <meta name="author" content="风海啸">
   <meta itemprop="name" content="kbe运行镜像 - 风海啸博客">
-  <meta itemprop="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe # 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.">
+  <meta itemprop="description" content="镜像地址 https://github.com/xiaohaoppy/kbe_server 用途 一台服务器部署多组kbe服务 可以使用该镜像分布式部署kbe 用法 git clone https://github.com/xiaohaoppy/kbe_server.git cd kbe_server 使用编译镜像编译kbehttps://github.c">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
@@ -81,6 +81,11 @@
 <ul>
 <li><a href="#镜像地址:091568a9ec46ad4d8d09b6399a30aff5">镜像地址</a></li>
 <li><a href="#用途:091568a9ec46ad4d8d09b6399a30aff5">用途</a></li>
+<li><a href="#用法:091568a9ec46ad4d8d09b6399a30aff5">用法</a>
+<ul>
+<li><a href="#build镜像:091568a9ec46ad4d8d09b6399a30aff5">build镜像</a></li>
+<li><a href="#启动镜像:091568a9ec46ad4d8d09b6399a30aff5">启动镜像</a></li>
+</ul></li>
 </ul>
 </nav>
 		</div>
@@ -97,7 +102,7 @@
 
 <p>可以使用该镜像分布式部署kbe</p>
 
-<p># 用法</p>
+<h1 id="用法:091568a9ec46ad4d8d09b6399a30aff5">用法</h1>
 
 <pre><code> git clone https://github.com/xiaohaoppy/kbe_server.git
  cd kbe_server
@@ -121,12 +126,12 @@
  assets\res\server/kbengine.xml 修改配置文件 该容器里没有数据库需要自己配置数据库，并且配置对外ip
 </code></pre>
 
-<p>## build镜像</p>
+<h2 id="build镜像:091568a9ec46ad4d8d09b6399a30aff5">build镜像</h2>
 
 <pre><code> docker build xiaohaoppy/kbe-server .
 </code></pre>
 
-<p>## 启动镜像</p>
+<h2 id="启动镜像:091568a9ec46ad4d8d09b6399a30aff5">启动镜像</h2>
 
 <p>-u 为设置容器的UID -p 映射端口  -i -t 启动个伪终端</p>
 
