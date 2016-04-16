@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>关于 - 风海啸博客</title>
+  <title>docker中编译ngrok - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="">
+  <meta name="description" content="使用官方golang镜像 docker run -i -t golang /bin/bash 运行完直接进入容器 下载ngrok cd / git clone https://github.com/tutumcloud/ngrok.git /ngrok 编译ngrok export GOPATH=/ngrok/ export NGROK_DOMAIN=&quot;ngrok.me&quot; #域名 openssl genrsa -out rootCA.key 2048 #生成密钥 openssl req -x509 -new -nodes -key">
   <meta name="author" content="风海啸">
-  <meta itemprop="name" content="关于 - 风海啸博客">
-  <meta itemprop="description" content="">
+  <meta itemprop="name" content="docker中编译ngrok - 风海啸博客">
+  <meta itemprop="description" content="使用官方golang镜像 docker run -i -t golang /bin/bash 运行完直接进入容器 下载ngrok cd / git clone https://github.com/tutumcloud/ngrok.git /ngrok 编译ngrok export GOPATH=/ngrok/ export NGROK_DOMAIN=&quot;ngrok.me&quot; #域名 openssl genrsa -out rootCA.key 2048 #生成密钥 openssl req -x509 -new -nodes -key">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://xiaohaoppy.daoapp.io/about/" title="关于" itemprop="url">关于</a>
+      <a href="http://xiaohaoppy.daoapp.io/post/docker%E4%B8%AD%E7%BC%96%E8%AF%91ngrok/" title="docker中编译ngrok" itemprop="url">docker中编译ngrok</a>
   </h1>
   <p class="article-author">By
     
@@ -69,21 +69,117 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2016-04-13 13:25:20 &#43;0800 CST" itemprop="datePublished">2016年04月13日</time>
+    <time datetime="2016-04-16 19:26:35 &#43;0800 CST" itemprop="datePublished">2016年04月16日</time>
   </p>
 </header>
 
 	<div class="article-content">
     
+		<div class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+      <nav id="TableOfContents">
+<ul>
+<li><a href="#使用官方golang镜像:c4b48cb8c94f77dcf8d07046d6ba9f41">使用官方golang镜像</a></li>
+<li><a href="#下载ngrok:c4b48cb8c94f77dcf8d07046d6ba9f41">下载ngrok</a></li>
+<li><a href="#编译ngrok:c4b48cb8c94f77dcf8d07046d6ba9f41">编译ngrok</a></li>
+<li><a href="#退出容器导出:c4b48cb8c94f77dcf8d07046d6ba9f41">退出容器导出</a></li>
+<li><a href="#修改host文件:c4b48cb8c94f77dcf8d07046d6ba9f41">修改host文件</a></li>
+<li><a href="#启动ngrokd:c4b48cb8c94f77dcf8d07046d6ba9f41">启动ngrokd</a></li>
+<li><a href="#测试客户端:c4b48cb8c94f77dcf8d07046d6ba9f41">测试客户端</a></li>
+<li><a href="#测试成功:c4b48cb8c94f77dcf8d07046d6ba9f41">测试成功</a></li>
+</ul>
+</nav>
+		</div>
     
+    
+
+<h1 id="使用官方golang镜像:c4b48cb8c94f77dcf8d07046d6ba9f41">使用官方golang镜像</h1>
+
+<pre><code>docker run -i -t golang /bin/bash
+</code></pre>
+
+<p>运行完直接进入容器</p>
+
+<h1 id="下载ngrok:c4b48cb8c94f77dcf8d07046d6ba9f41">下载ngrok</h1>
+
+<pre><code>cd /
+git clone https://github.com/tutumcloud/ngrok.git /ngrok
+</code></pre>
+
+<h1 id="编译ngrok:c4b48cb8c94f77dcf8d07046d6ba9f41">编译ngrok</h1>
+
+<pre><code>export GOPATH=/ngrok/
+export NGROK_DOMAIN=&quot;ngrok.me&quot; #域名
+
+openssl genrsa -out rootCA.key 2048 #生成密钥
+openssl req -x509 -new -nodes -key rootCA.key -subj &quot;/CN=$NGROK_DOMAIN&quot; -days 5000 -out rootCA.pem
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -subj &quot;/CN=$NGROK_DOMAIN&quot; -out server.csr
+openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 5000
+cp rootCA.pem assets/client/tls/ngrokroot.crt
+cp server.crt assets/server/tls/snakeoil.crt
+cp server.key assets/server/tls/snakeoil.key
+GOOS=windows GOARCH=amd64 make release-client release-server #编译 生成win版
+</code></pre>
+
+<h1 id="退出容器导出:c4b48cb8c94f77dcf8d07046d6ba9f41">退出容器导出</h1>
+
+<pre><code>docker cp &lt;容器ID&gt;:/ngrok/bin/windows_amd64/ /c/User/ngrok/
+</code></pre>
+
+<h1 id="修改host文件:c4b48cb8c94f77dcf8d07046d6ba9f41">修改host文件</h1>
+
+<p>添加 127.0.0.1    ngrok.me</p>
+
+<h1 id="启动ngrokd:c4b48cb8c94f77dcf8d07046d6ba9f41">启动ngrokd</h1>
+
+<pre><code>ngrokd -domain=&quot;ngrok.me&quot; -httpAddr=&quot;:8080&quot; -httpsAddr=&quot;:8081&quot;
+</code></pre>
+
+<h1 id="测试客户端:c4b48cb8c94f77dcf8d07046d6ba9f41">测试客户端</h1>
+
+<pre><code>ngrok -config ngrok.cfg start baseapp loginapp
+</code></pre>
+
+<h1 id="测试成功:c4b48cb8c94f77dcf8d07046d6ba9f41">测试成功</h1>
+
+<pre><code>ngrok                                                                                                                                                   (Ctrl+C to quit)
+
+Tunnel Status                 online
+Version                       1.7/1.7
+Forwarding                    tcp://ngrok.me:30013 -&gt; 127.0.0.1:30013
+Forwarding                    tcp://ngrok.me:30015 -&gt; 127.0.0.1:30015
+Web Interface                 127.0.0.1:4040
+# Conn                        0
+Avg Conn Time                 0.00ms
+</code></pre>
+
 	</div>
   <footer class="article-footer clearfix">
   
 
+<div class="article-tags">
+  <span></span>
+  
+  <a href="http://xiaohaoppy.daoapp.io/tags/ngrok">ngrok</a>
+  
+</div>
+
+
+
+
+
+<div class="article-categories">
+  <span></span>
+  
+  <a class="article-category-link" href="http://xiaohaoppy.daoapp.io/categories/ngrok">ngrok</a>
+  
+</div>
+
 
 
   <div class="article-share" id="share">
-    <div data-url="http://xiaohaoppy.daoapp.io/about/" data-title="关于" data-tsina="" class="share clearfix">
+    <div data-url="http://xiaohaoppy.daoapp.io/post/docker%E4%B8%AD%E7%BC%96%E8%AF%91ngrok/" data-title="docker中编译ngrok" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
@@ -254,6 +350,38 @@ $(document).ready(function(){
 
 <script type="text/javascript">
 $(document).ready(function(){
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
   var $this = $('.share'),
       url = $this.attr('data-url'),
       encodedUrl = encodeURIComponent(url),
@@ -280,6 +408,27 @@ $(document).ready(function(){
 });
 </script>
 
+
+<link rel="stylesheet" href="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="http://xiaohaoppy.daoapp.io/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+});
+</script>
 
 
 

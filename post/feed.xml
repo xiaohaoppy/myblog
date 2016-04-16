@@ -6,8 +6,79 @@
     <description>Recent content in Posts on 风海啸博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 14 Apr 2016 14:12:03 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Apr 2016 19:26:35 +0800</lastBuildDate>
     <atom:link href="http://xiaohaoppy.daoapp.io/post/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>docker中编译ngrok</title>
+      <link>http://xiaohaoppy.daoapp.io/post/docker%E4%B8%AD%E7%BC%96%E8%AF%91ngrok/</link>
+      <pubDate>Sat, 16 Apr 2016 19:26:35 +0800</pubDate>
+      
+      <guid>http://xiaohaoppy.daoapp.io/post/docker%E4%B8%AD%E7%BC%96%E8%AF%91ngrok/</guid>
+      <description>
+
+&lt;h1 id=&#34;使用官方golang镜像:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;使用官方golang镜像&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -i -t golang /bin/bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行完直接进入容器&lt;/p&gt;
+
+&lt;h1 id=&#34;下载ngrok:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;下载ngrok&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /
+git clone https://github.com/tutumcloud/ngrok.git /ngrok
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;编译ngrok:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;编译ngrok&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;export GOPATH=/ngrok/
+export NGROK_DOMAIN=&amp;quot;ngrok.me&amp;quot; #域名
+
+openssl genrsa -out rootCA.key 2048 #生成密钥
+openssl req -x509 -new -nodes -key rootCA.key -subj &amp;quot;/CN=$NGROK_DOMAIN&amp;quot; -days 5000 -out rootCA.pem
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -subj &amp;quot;/CN=$NGROK_DOMAIN&amp;quot; -out server.csr
+openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 5000
+cp rootCA.pem assets/client/tls/ngrokroot.crt
+cp server.crt assets/server/tls/snakeoil.crt
+cp server.key assets/server/tls/snakeoil.key
+GOOS=windows GOARCH=amd64 make release-client release-server #编译 生成win版
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;退出容器导出:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;退出容器导出&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;docker cp &amp;lt;容器ID&amp;gt;:/ngrok/bin/windows_amd64/ /c/User/ngrok/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;修改host文件:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;修改host文件&lt;/h1&gt;
+
+&lt;p&gt;添加 127.0.0.1    ngrok.me&lt;/p&gt;
+
+&lt;h1 id=&#34;启动ngrokd:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;启动ngrokd&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;ngrokd -domain=&amp;quot;ngrok.me&amp;quot; -httpAddr=&amp;quot;:8080&amp;quot; -httpsAddr=&amp;quot;:8081&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;测试客户端:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;测试客户端&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;ngrok -config ngrok.cfg start baseapp loginapp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;测试成功:c4b48cb8c94f77dcf8d07046d6ba9f41&#34;&gt;测试成功&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;ngrok                                                                                                                                                   (Ctrl+C to quit)
+
+Tunnel Status                 online
+Version                       1.7/1.7
+Forwarding                    tcp://ngrok.me:30013 -&amp;gt; 127.0.0.1:30013
+Forwarding                    tcp://ngrok.me:30015 -&amp;gt; 127.0.0.1:30015
+Web Interface                 127.0.0.1:4040
+# Conn                        0
+Avg Conn Time                 0.00ms
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>使用反向链接搭建公网可访问的kbe服务</title>

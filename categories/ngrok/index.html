@@ -2,18 +2,18 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>关于 - 风海啸博客</title>
+  <title>Ngrok - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="">
+  <meta name="description" content="Ngrok">
   <meta name="author" content="风海啸">
-  <meta itemprop="name" content="关于 - 风海啸博客">
-  <meta itemprop="description" content="">
+  <meta itemprop="name" content="Ngrok - 风海啸博客">
+  <meta itemprop="description" content="Ngrok">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
   <meta name="twitter:description" content="">
-  
+  <link rel="alternate" href="http://xiaohaoppy.daoapp.io/feed.xml" title="风海啸博客" type="application/rss+xml"/>
   <link rel="shortcut icon" href="http://xiaohaoppy.daoapp.io/img/favicon.ico"/>
   <link rel="apple-touch-icon" href="http://xiaohaoppy.daoapp.io/apple-touch-icon.png" />
   <link rel="apple-touch-icon-precomposed" href="http://xiaohaoppy.daoapp.io/apple-touch-icon.png" />
@@ -57,44 +57,21 @@
 
   </header>
   <div id="container">
-    <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody">
-    <header class="article-info clearfix">
-  <h1 itemprop="name">
-      <a href="http://xiaohaoppy.daoapp.io/about/" title="关于" itemprop="url">关于</a>
-  </h1>
-  <p class="article-author">By
-    
-      <a href="http://xiaohaoppy.daoapp.io/" title="风海啸">风海啸</a>
-    
-  </p>
-  <p class="article-time">
-    <time datetime="2016-04-13 13:25:20 &#43;0800 CST" itemprop="datePublished">2016年04月13日</time>
-  </p>
-</header>
+    <div id="main">
+      
+      <h2 id="2016-04">2016-04</h2>
+      
+      <section class="post" itemscope itemprop="blogPost">
+    <a href="http://xiaohaoppy.daoapp.io/post/docker%E4%B8%AD%E7%BC%96%E8%AF%91ngrok/" title="docker中编译ngrok" itemprop="url">
+    <h1 itemprop="name">docker中编译ngrok</h1>
+    <p itemprop="description">使用官方golang镜像 docker run -i -t golang /bin/bash 运行完直接进入容器 下载ngrok cd / git clone https://github.com/tutumcloud/ngrok.git /ngrok 编译ngrok export GOPATH=/ngrok/ export NGROK_DOMAIN=&quot;ngrok.me&quot; #域名 openssl genrsa -out rootCA.key 2048 #生成密钥 openssl req -x509 -new -nodes -key</p>
+    <time datetime="2016-04-16 19:26:35 &#43;0800 CST" itemprop="datePublished">2016年04月16日</time>
+  </a>
+</section>
 
-	<div class="article-content">
-    
-    
-	</div>
-  <footer class="article-footer clearfix">
-  
-
-
-
-  <div class="article-share" id="share">
-    <div data-url="http://xiaohaoppy.daoapp.io/about/" data-title="关于" data-tsina="" class="share clearfix">
+      
+      
     </div>
-  </div>
-</footer>
-
-	</article>
-  
-
-
-
-</div>
-
     <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 <div id="asidepart">
 <div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
@@ -166,6 +143,10 @@
 
 
   
+<div class="rsspart">
+  <a rel="nofollow" href="http://xiaohaoppy.daoapp.io/feed.xml" type="application/rss+xml" target="_blank">RSS 订阅</a>
+</div>
+
 
 </aside>
 </div>
