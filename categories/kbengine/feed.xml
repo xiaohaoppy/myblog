@@ -19,7 +19,7 @@
 
 &lt;h1 id=&#34;用法:2ee57b1f2323f1b9729b197646864e07&#34;&gt;用法&lt;/h1&gt;
 
-&lt;h2 id=&#34;编译镜像:2ee57b1f2323f1b9729b197646864e07&#34;&gt;编译镜像&lt;/h2&gt;
+&lt;h3 id=&#34;编译镜像:2ee57b1f2323f1b9729b197646864e07&#34;&gt;编译镜像&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;gir clone https://github.com/xiaohaoppy/kbe-wc.git
 
@@ -28,7 +28,7 @@ cd kbe-wc
 docker build -t xiaohaoppy/kbe-wc .
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;启动镜像:2ee57b1f2323f1b9729b197646864e07&#34;&gt;启动镜像&lt;/h2&gt;
+&lt;h3 id=&#34;启动镜像:2ee57b1f2323f1b9729b197646864e07&#34;&gt;启动镜像&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;docker run -p 8000 xiaohaoppy/kbe-wc
 &lt;/code&gt;&lt;/pre&gt;
