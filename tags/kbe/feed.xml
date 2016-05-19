@@ -55,6 +55,23 @@ git pull githubhttps master
 make
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h1 id=&#34;配置数据库:a7124b968414ca8f1e9342ac201a3eda&#34;&gt;配置数据库&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;    mysql&amp;gt; create database kbe;
+	mysql&amp;gt; use mysql 
+	mysql&amp;gt; delete from user where user=&#39;&#39;; 
+	mysql&amp;gt; FLUSH PRIVILEGES;
+	mysql&amp;gt; grant all privileges on *.* to kbe@&#39;%&#39; identified by &#39;kbe&#39;;
+	mysql&amp;gt; grant select,insert,update,delete,create,drop on *.* to kbe@&#39;%&#39; identified by &#39;kbe&#39;;
+	mysql&amp;gt; FLUSH PRIVILEGES
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;启动kbengine服务器:a7124b968414ca8f1e9342ac201a3eda&#34;&gt;启动kbengine服务器&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;cd assets/
+sh start_server.sh
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;&lt;strong&gt;最后效果&lt;/strong&gt;&lt;br /&gt;
 &lt;img src=&#34;http://xiaohaoppy.daoapp.io/img/cloud9_222.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>

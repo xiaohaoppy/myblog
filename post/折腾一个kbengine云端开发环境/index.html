@@ -83,6 +83,8 @@
 <li><a href="#构建kbengine开发环境:a7124b968414ca8f1e9342ac201a3eda">构建kbengine开发环境</a></li>
 <li><a href="#下载kbengine:a7124b968414ca8f1e9342ac201a3eda">下载kbengine</a></li>
 <li><a href="#编译kbengine:a7124b968414ca8f1e9342ac201a3eda">编译kbengine</a></li>
+<li><a href="#配置数据库:a7124b968414ca8f1e9342ac201a3eda">配置数据库</a></li>
+<li><a href="#启动kbengine服务器:a7124b968414ca8f1e9342ac201a3eda">启动kbengine服务器</a></li>
 </ul>
 </nav>
 		</div>
@@ -125,6 +127,23 @@ git pull githubhttps master
 
 <pre><code>cd kbe/src
 make
+</code></pre>
+
+<h1 id="配置数据库:a7124b968414ca8f1e9342ac201a3eda">配置数据库</h1>
+
+<pre><code>    mysql&gt; create database kbe;
+	mysql&gt; use mysql 
+	mysql&gt; delete from user where user=''; 
+	mysql&gt; FLUSH PRIVILEGES;
+	mysql&gt; grant all privileges on *.* to kbe@'%' identified by 'kbe';
+	mysql&gt; grant select,insert,update,delete,create,drop on *.* to kbe@'%' identified by 'kbe';
+	mysql&gt; FLUSH PRIVILEGES
+</code></pre>
+
+<h1 id="启动kbengine服务器:a7124b968414ca8f1e9342ac201a3eda">启动kbengine服务器</h1>
+
+<pre><code>cd assets/
+sh start_server.sh
 </code></pre>
 
 <p><strong>最后效果</strong><br />
