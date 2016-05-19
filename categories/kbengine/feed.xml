@@ -6,8 +6,59 @@
     <description>Recent content in Kbengine on 风海啸博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 16 May 2016 16:11:09 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 May 2016 10:39:13 +0800</lastBuildDate>
     <atom:link href="http://xiaohaoppy.daoapp.io/categories/kbengine/feed/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>折腾一个kbengine云端开发环境</title>
+      <link>http://xiaohaoppy.daoapp.io/post/%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%AAkbengine%E4%BA%91%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 18 May 2016 10:39:13 +0800</pubDate>
+      
+      <guid>http://xiaohaoppy.daoapp.io/post/%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%AAkbengine%E4%BA%91%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;docker搭建cloud9 ide 并配置kbengine开发环境&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;随着云技术的发展，各种基于云端的IDE也相继出现。相比于传统的IDE，云端IDE可以让多个程序员同时在不同的设备上查看并编辑代码，大大提升工作协同和效率。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;启动一个cloud9容器:a7124b968414ca8f1e9342ac201a3eda&#34;&gt;启动一个cloud9容器&lt;/h1&gt;
+
+&lt;p&gt;使用kdelfour/cloud9-docker镜像&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker run -it -d -p 80:80 kdelfour/cloud9-docker
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;浏览器访问&lt;a href=&#34;http://192.168.59.103:80&#34;&gt;http://192.168.59.103:80&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&#34;http://xiaohaoppy.daoapp.io/img/cloud9_111.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;构建kbengine开发环境:a7124b968414ca8f1e9342ac201a3eda&#34;&gt;构建kbengine开发环境&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;观看docker镜像的构建文件，该镜像安装了build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs supervisor 继续配置kbe环境
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;apt-get update
+apt-get install mysql-server mysql-client
+apt-get install libmysqlclient-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;下载kbengine:a7124b968414ca8f1e9342ac201a3eda&#34;&gt;下载kbengine&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+git remote add githubhttps https://github.com/kbengine/kbengine.git
+git pull githubhttps master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;编译kbengine:a7124b968414ca8f1e9342ac201a3eda&#34;&gt;编译kbengine&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;cd kbe/src
+make
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;最后效果&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&#34;http://xiaohaoppy.daoapp.io/img/cloud9_222.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>kbengine的web控制台镜像</title>
