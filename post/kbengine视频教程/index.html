@@ -2,13 +2,13 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>折腾一个kbengine云端开发环境 - 风海啸博客</title>
+  <title>kbengine视频教程 - 风海啸博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
   
-  <meta name="description" content="docker搭建cloud9 ide 并配置kbengine开发环境 随着云技术的发展，各种基于云端的IDE也相继出现。相比于传统的IDE，云端IDE">
+  <meta name="description" content="KBEngine教程01 简单介绍与安装 KBEngine教程02 运行demo KBEngine教程03 客户端登陆 KBEngine教程04 服务端配">
   <meta name="author" content="风海啸">
-  <meta itemprop="name" content="折腾一个kbengine云端开发环境 - 风海啸博客">
-  <meta itemprop="description" content="docker搭建cloud9 ide 并配置kbengine开发环境 随着云技术的发展，各种基于云端的IDE也相继出现。相比于传统的IDE，云端IDE">
+  <meta itemprop="name" content="kbengine视频教程 - 风海啸博客">
+  <meta itemprop="description" content="KBEngine教程01 简单介绍与安装 KBEngine教程02 运行demo KBEngine教程03 客户端登陆 KBEngine教程04 服务端配">
   <meta itemprop="image" content="http://xiaohaoppy.daoapp.io/img/author.jpg">
   
   
@@ -61,7 +61,7 @@
 	<article itemprop="articleBody">
     <header class="article-info clearfix">
   <h1 itemprop="name">
-      <a href="http://xiaohaoppy.daoapp.io/post/%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%AAkbengine%E4%BA%91%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" title="折腾一个kbengine云端开发环境" itemprop="url">折腾一个kbengine云端开发环境</a>
+      <a href="http://xiaohaoppy.daoapp.io/post/kbengine%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B/" title="kbengine视频教程" itemprop="url">kbengine视频教程</a>
   </h1>
   <p class="article-author">By
     
@@ -69,7 +69,7 @@
     
   </p>
   <p class="article-time">
-    <time datetime="2016-05-18 10:39:13 &#43;0800 CST" itemprop="datePublished">2016年05月18日</time>
+    <time datetime="2016-05-28 10:41:55 &#43;0800 CST" itemprop="datePublished">2016年05月28日</time>
   </p>
 </header>
 
@@ -79,75 +79,97 @@
 			<strong class="toc-title">文章目录</strong>
       <nav id="TableOfContents">
 <ul>
-<li><a href="#启动一个cloud9容器:a7124b968414ca8f1e9342ac201a3eda">启动一个cloud9容器</a></li>
-<li><a href="#构建kbengine开发环境:a7124b968414ca8f1e9342ac201a3eda">构建kbengine开发环境</a></li>
-<li><a href="#下载kbengine:a7124b968414ca8f1e9342ac201a3eda">下载kbengine</a></li>
-<li><a href="#编译kbengine:a7124b968414ca8f1e9342ac201a3eda">编译kbengine</a></li>
-<li><a href="#配置数据库:a7124b968414ca8f1e9342ac201a3eda">配置数据库</a></li>
-<li><a href="#启动kbengine服务器:a7124b968414ca8f1e9342ac201a3eda">启动kbengine服务器</a></li>
+<li><a href="#kbengine教程01-简单介绍与安装:bc7107c3225c6f383a9441e83376cb22">KBEngine教程01 简单介绍与安装</a></li>
+<li><a href="#kbengine教程02-运行demo:bc7107c3225c6f383a9441e83376cb22">KBEngine教程02 运行demo</a></li>
+<li><a href="#kbengine教程03-客户端登陆:bc7107c3225c6f383a9441e83376cb22">KBEngine教程03 客户端登陆</a></li>
+<li><a href="#kbengine教程04-服务端配置:bc7107c3225c6f383a9441e83376cb22">KBEngine教程04 服务端配置</a></li>
+<li><a href="#kbengine教程05-客户端与服务端交互:bc7107c3225c6f383a9441e83376cb22">KBEngine教程05 客户端与服务端交互</a></li>
+<li><a href="#kbengine教程06-服务端与客户端交互:bc7107c3225c6f383a9441e83376cb22">KBEngine教程06 服务端与客户端交互</a></li>
+<li><a href="#kbengine教程07-演示:bc7107c3225c6f383a9441e83376cb22">KBEngine教程07 演示</a></li>
+<li><a href="#kbengine教程08-请求创建角色:bc7107c3225c6f383a9441e83376cb22">KBEngine教程08 请求创建角色</a></li>
+<li><a href="#kbengine教程09-角色信息1:bc7107c3225c6f383a9441e83376cb22">KBEngine教程09 角色信息1</a></li>
+<li><a href="#kbengine教程10-角色信息2:bc7107c3225c6f383a9441e83376cb22">KBEngine教程10 角色信息2</a></li>
+<li><a href="#kbengine教程11-角色列表01:bc7107c3225c6f383a9441e83376cb22">KBEngine教程11 角色列表01</a></li>
+<li><a href="#kbengine教程12-角色列表02:bc7107c3225c6f383a9441e83376cb22">KBEngine教程12 角色列表02</a></li>
+<li><a href="#kbengine教程13-角色列表03:bc7107c3225c6f383a9441e83376cb22">KBEngine教程13 角色列表03</a></li>
+<li><a href="#kbengine教程14-角色列表04:bc7107c3225c6f383a9441e83376cb22">KBEngine教程14 角色列表04</a></li>
+<li><a href="#kbengine教程15-角色列表05:bc7107c3225c6f383a9441e83376cb22">KBEngine教程15 角色列表05</a></li>
+<li><a href="#kbengine教程16-学习目标之角色列表:bc7107c3225c6f383a9441e83376cb22">KBEngine教程16 学习目标之角色列表</a></li>
+<li><a href="#kbengine教程17-服务器导航网格生成:bc7107c3225c6f383a9441e83376cb22">KBEngine教程17 服务器导航网格生成</a></li>
 </ul>
 </nav>
 		</div>
     
     
 
-<p><strong>docker搭建cloud9 ide 并配置kbengine开发环境</strong></p>
+<h1 id="kbengine教程01-简单介绍与安装:bc7107c3225c6f383a9441e83376cb22">KBEngine教程01 简单介绍与安装</h1>
 
-<pre><code>随着云技术的发展，各种基于云端的IDE也相继出现。相比于传统的IDE，云端IDE可以让多个程序员同时在不同的设备上查看并编辑代码，大大提升工作协同和效率。
-</code></pre>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM1MTU0NTM4MA==" frameborder=0 allowfullscreen></iframe>  
 
-<h1 id="启动一个cloud9容器:a7124b968414ca8f1e9342ac201a3eda">启动一个cloud9容器</h1>
+<h1 id="kbengine教程02-运行demo:bc7107c3225c6f383a9441e83376cb22">KBEngine教程02 运行demo</h1>
 
-<p>使用kdelfour/cloud9-docker镜像</p>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM1MTU0OTUzNg==" frameborder=0 allowfullscreen></iframe>  
 
-<pre><code>docker run -it -d -p 80:80 kdelfour/cloud9-docker
-</code></pre>
+<h1 id="kbengine教程03-客户端登陆:bc7107c3225c6f383a9441e83376cb22">KBEngine教程03 客户端登陆</h1>
 
-<p>浏览器访问<a href="http://192.168.59.103:80">http://192.168.59.103:80</a><br />
-<img src="img/cloud9_111.png" alt="" /></p>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM1NDI0MTgwOA==" frameborder=0 allowfullscreen></iframe>  
 
-<h1 id="构建kbengine开发环境:a7124b968414ca8f1e9342ac201a3eda">构建kbengine开发环境</h1>
+<h1 id="kbengine教程04-服务端配置:bc7107c3225c6f383a9441e83376cb22">KBEngine教程04 服务端配置</h1>
 
-<pre><code>观看docker镜像的构建文件，该镜像安装了build-essential g++ curl libssl-dev apache2-utils git libxml2-dev sshfs supervisor 继续配置kbe环境
-</code></pre>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM1NDIyNDY2NA==" frameborder=0 allowfullscreen></iframe>  
 
-<pre><code>apt-get update
-apt-get install mysql-server mysql-client
-apt-get install libmysqlclient-dev
-</code></pre>
+<h1 id="kbengine教程05-客户端与服务端交互:bc7107c3225c6f383a9441e83376cb22">KBEngine教程05 客户端与服务端交互</h1>
 
-<h1 id="下载kbengine:a7124b968414ca8f1e9342ac201a3eda">下载kbengine</h1>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM1NjcxMDI4OA==" frameborder=0 allowfullscreen></iframe>  
 
-<pre><code>git init
-git remote add githubhttps https://github.com/kbengine/kbengine.git
-git pull githubhttps master
-</code></pre>
+<h1 id="kbengine教程06-服务端与客户端交互:bc7107c3225c6f383a9441e83376cb22">KBEngine教程06 服务端与客户端交互</h1>
 
-<h1 id="编译kbengine:a7124b968414ca8f1e9342ac201a3eda">编译kbengine</h1>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM1NjA0MDYyOA==" frameborder=0 allowfullscreen></iframe>  
 
-<pre><code>cd kbe/src
-make
-</code></pre>
+<h1 id="kbengine教程07-演示:bc7107c3225c6f383a9441e83376cb22">KBEngine教程07 演示</h1>
 
-<h1 id="配置数据库:a7124b968414ca8f1e9342ac201a3eda">配置数据库</h1>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM2MTExMTE2OA==" frameborder=0 allowfullscreen></iframe>  
 
-<pre><code>    mysql&gt; create database kbe;
-	mysql&gt; use mysql 
-	mysql&gt; delete from user where user=''; 
-	mysql&gt; FLUSH PRIVILEGES;
-	mysql&gt; grant all privileges on *.* to kbe@'%' identified by 'kbe';
-	mysql&gt; grant select,insert,update,delete,create,drop on *.* to kbe@'%' identified by 'kbe';
-	mysql&gt; FLUSH PRIVILEGES
-</code></pre>
+<h1 id="kbengine教程08-请求创建角色:bc7107c3225c6f383a9441e83376cb22">KBEngine教程08 请求创建角色</h1>
 
-<h1 id="启动kbengine服务器:a7124b968414ca8f1e9342ac201a3eda">启动kbengine服务器</h1>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzM4NzMxMg==" frameborder=0 allowfullscreen></iframe>  
 
-<pre><code>cd assets/
-sh start_server.sh
-</code></pre>
+<h1 id="kbengine教程09-角色信息1:bc7107c3225c6f383a9441e83376cb22">KBEngine教程09 角色信息1</h1>
 
-<p><strong>最后效果</strong><br />
-<img src="img/cloud9_222.png" alt="" /></p>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzQwNjkyNA==" frameborder=0 allowfullscreen></iframe>
+  
+
+<h1 id="kbengine教程10-角色信息2:bc7107c3225c6f383a9441e83376cb22">KBEngine教程10 角色信息2</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzQ0NTcxMg==" frameborder=0 allowfullscreen></iframe>  
+
+<h1 id="kbengine教程11-角色列表01:bc7107c3225c6f383a9441e83376cb22">KBEngine教程11 角色列表01</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzQ3Mjk4OA==" frameborder=0 allowfullscreen></iframe>  
+
+<h1 id="kbengine教程12-角色列表02:bc7107c3225c6f383a9441e83376cb22">KBEngine教程12 角色列表02</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzQ5MDA2NA==" frameborder=0 allowfullscreen></iframe>  
+
+<h1 id="kbengine教程13-角色列表03:bc7107c3225c6f383a9441e83376cb22">KBEngine教程13 角色列表03</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzQ5MTU3Mg==" frameborder=0 allowfullscreen></iframe>  
+
+<h1 id="kbengine教程14-角色列表04:bc7107c3225c6f383a9441e83376cb22">KBEngine教程14 角色列表04</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzQ5OTEyMA==" frameborder=0 allowfullscreen></iframe>  
+
+<h1 id="kbengine教程15-角色列表05:bc7107c3225c6f383a9441e83376cb22">KBEngine教程15 角色列表05</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTM3MzUwNjExNg==" frameborder=0 allowfullscreen></iframe>  
+
+<h1 id="kbengine教程16-学习目标之角色列表:bc7107c3225c6f383a9441e83376cb22">KBEngine教程16 学习目标之角色列表</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTQwMzc0MTM3Mg==" frameborder=0 allowfullscreen></iframe>  
+
+<h1 id="kbengine教程17-服务器导航网格生成:bc7107c3225c6f383a9441e83376cb22">KBEngine教程17 服务器导航网格生成</h1>
+
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMTU2NDYxNTIyOA==" frameborder=0 allowfullscreen></iframe>  
 
 	</div>
   <footer class="article-footer clearfix">
@@ -174,7 +196,7 @@ sh start_server.sh
 
 
   <div class="article-share" id="share">
-    <div data-url="http://xiaohaoppy.daoapp.io/post/%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%AAkbengine%E4%BA%91%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/" data-title="折腾一个kbengine云端开发环境" data-tsina="" class="share clearfix">
+    <div data-url="http://xiaohaoppy.daoapp.io/post/kbengine%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B/" data-title="kbengine视频教程" data-tsina="" class="share clearfix">
     </div>
   </div>
 </footer>
